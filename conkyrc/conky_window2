@@ -1,16 +1,14 @@
 #!/usr/bin/conky  -c
 alignment tl
-background yes				# Change this true after testing
+background yes				# Send conky to background.
 cpu_avg_samples 2.0
 default_color 000000
-double_buffer yes
+double_buffer yes			# Important. Eliminates flickering.
 draw_graph_borders yes
-draw_shades no				# Otherwise everything is drawn twice :/
+draw_shades no				# Otherwise text is drawn twice :/
 format_human_readable yes
 gap_x 450
 gap_y 40
-lua_load /home/vinay/test.lua
-lua_draw_hood conky_main
 maximum_width 1366
 minimum_size 500 700
 no_buffers yes
@@ -18,11 +16,11 @@ own_window yes
 own_window_colour 000000
 own_window_hints undecorated, below, sticky, skip_taskbar, skip_pager
 own_window_transparent yes
-own_window_type desktop		# so that conky does not minimize when i press ctrl+win+d
+own_window_type desktop		# Any other value than desktop will make the windows disappear when all windows are minimized.
 short_units yes
 show_graph_range yes
 show_graph_scale yes
-update_interval 2.0
+update_interval 2.0			# Interval at which conky updates.
 use_xft yes
 xftalpha 1
 xftfont Kontrapunkt-Light:pixelsize=20

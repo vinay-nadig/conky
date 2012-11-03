@@ -1,11 +1,11 @@
 #!/usr/bin/conky  -c
 alignment tl
-background yes				# Change this true after testing
+background yes				# send conky to background
 cpu_avg_samples 2.0
 default_color 000000
-double_buffer yes
+double_buffer yes			# Important. Eliminates flickering
 draw_graph_borders yes
-draw_shades no				# Otherwise everything is drawn twice :/
+draw_shades no				# Otherwise text is drawn twice :/
 format_human_readable yes
 gap_x 10
 gap_y 30
@@ -15,11 +15,11 @@ own_window yes
 own_window_colour 000000
 own_window_hints undecorated, skip_taskbar, below, sticky, skip_pager
 own_window_transparent yes
-own_window_type desktop
+own_window_type desktop		# Any other value than desktop will make the windows disappear if u minimize all the windows
 short_units yes
 show_graph_range yes
 show_graph_scale yes
-update_interval 2.0
+update_interval 2.0			# Interval at which conky updates.
 use_spacer left
 use_xft yes
 xftalpha 1
