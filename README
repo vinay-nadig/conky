@@ -1,0 +1,8 @@
+Conky Config files for my desktop.
+
+Installation
+1. Make sure that conky is insalled
+2. copy the conkyrc/* files to desired directory
+3. run `conky -c <conkyrc_files>`
+
+
