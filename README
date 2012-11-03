@@ -1,8 +1,13 @@
 Conky Config files for my desktop.
 
 Installation
-1. Make sure that conky is insalled
+1. Make sure that conky is installed
 2. copy the conkyrc/* files to desired directory
 3. run `conky -c <conkyrc_files>`
+
+TODO
+1. Add images
+2. Get cairo and lua to work for the analog clock
+3. Add Rss and weather scripts(Not sure about the weather script since i have weather indicator anyway)
 
 
