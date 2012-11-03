@@ -1,0 +1,57 @@
+#!/usr/bin/conky  -c
+alignment tl
+background yes				# Change this true after testing
+cpu_avg_samples 2.0
+default_color 000000
+double_buffer yes
+draw_graph_borders yes
+draw_shades no				# Otherwise everything is drawn twice :/
+format_human_readable yes
+gap_x 10
+gap_y 30
+maximum_width 1366
+no_buffers yes
+own_window yes
+own_window_colour 000000
+own_window_hints undecorated, skip_taskbar, below, sticky, skip_pager
+own_window_transparent yes
+own_window_type desktop
+short_units yes
+show_graph_range yes
+show_graph_scale yes
+update_interval 2.0
+use_spacer left
+use_xft yes
+xftalpha 1
+xftfont Kontrapunkt-Light:pixelsize=20
+
+TEXT
+RAM
+Memory Available :${alignr}${offset 1}${memmax}
+Free Memory :${alignr}${offset 1}${memfree}
+Used Memory :${alignr}${offset 1}${mem}
+Buffered Memory :${alignr}${offset 1}${buffers}
+Cached Memory :${alignr}${offset 1}${cached}
+Easyfree Memory : ${alignr}${offset 1}${memeasyfree}
+${memgraph 25, 380}
+
+Hard Drive Usage
+Drives${alignc}${offset 15}Total${alignr}Used
+Root ${alignc}${offset 15}${fs_size /}${alignr}${fs_used /}
+${fs_bar 20, 380 /}
+${if_mounted /media/MEDIA}
+Media ${alignc}${offset 15}${fs_size /media/MEDIA}${alignr}${fs_used /media/MEDIA}
+${fs_bar 20, 380 /media/MEDIA}${endif}
+${if_mounted /media/DATA}
+Data ${alignc}${offset 15}${fs_size /media/DATA}${alignr}${fs_used /media/DATA}
+${fs_bar 20, 380 /media/DATA}${endif}
+
+Net Statistics
+${if_up eth1}Wlan
+Downspeed${alignr}${downspeed eth1}
+${downspeedgraph eth1 25, 380}
+Upspeed${alignr}${downspeed eth1}
+${upspeedgraph eth1 25, 380}
+${endif}Total Download${alignr}${totaldown eth1}
+Total Upload${alignr}${totalup eth1}
+

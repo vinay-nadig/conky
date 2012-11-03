@@ -1,0 +1,45 @@
+#!/usr/bin/conky  -c
+alignment tl
+background yes				# Change this true after testing
+cpu_avg_samples 2.0
+default_color 000000
+double_buffer yes
+draw_graph_borders yes
+draw_shades no				# Otherwise everything is drawn twice :/
+format_human_readable yes
+gap_x 450
+gap_y 40
+lua_load /home/vinay/test.lua
+lua_draw_hood conky_main
+maximum_width 1366
+minimum_size 500 700
+no_buffers yes
+own_window yes
+own_window_colour 000000
+own_window_hints undecorated, below, sticky, skip_taskbar, skip_pager
+own_window_transparent yes
+own_window_type desktop		# so that conky does not minimize when i press ctrl+win+d
+short_units yes
+show_graph_range yes
+show_graph_scale yes
+update_interval 2.0
+use_xft yes
+xftalpha 1
+xftfont Kontrapunkt-Light:pixelsize=20
+
+TEXT
+${offset 120}${font Kontrapunkt-Bold:pixelsize=50}MARVIN
+${offset 10}${font Kontrapunkt-Light:pixelsize=20}Kernel Version${alignr}${offset -40}${kernel}
+${offset 10}Uptime${alignr}${offset -40}${uptime}
+${if_up eth1}${offset 10}LAN IP${alignr}${offset -40}${addr eth1}${endif}
+
+${offset 12}${font Kontrapunkt-Bold:pixelsize=50}${time %e %B %G}
+${offset 125}${time %H:%M:%S}
+
+
+
+
+
+${font Kontrapunkt-Light:pixelsize=20}CPU Temperature${alignr}${offset -40}${acpitemp}${iconv_start UTF-8 ISO_8859-1}° ${iconv_stop}C
+CPU Load${alignr}${offset -40}${loadavg}
+${cpugraph 25, 460}

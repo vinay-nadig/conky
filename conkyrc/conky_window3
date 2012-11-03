@@ -1,0 +1,49 @@
+#!/usr/bin/conky  -c
+alignment tl
+background yes					# Change this true after testing
+cpu_avg_samples 2.0
+default_color 000000
+double_buffer yes
+draw_graph_borders yes
+draw_shades no				# Otherwise everything is drawn twice :/
+format_human_readable yes
+gap_x 960
+gap_y 30
+maximum_width 1366
+minimum_size 440 900
+no_buffers yes
+own_window yes
+own_window_colour 000000
+own_window_hints undecorated, skip_taskbar, below, sticky, skip_pager
+own_window_transparent yes
+own_window_type desktop
+short_units yes
+show_graph_range yes
+show_graph_scale yes
+update_interval 2.0
+use_spacer left
+use_xft yes
+xftalpha 1
+xftfont Kontrapunkt-Light:pixelsize=20
+
+TEXT
+Battery
+Time Remaining${alignr}${offset -40}${battery_time}
+Battery Status${alignr}${offset -40}${battery_short}
+${battery_bar 25, 400}
+
+Processes
+Top 3 CPU intensive processes
+${hr 2}
+Name${alignc}${offset 40}PID${alignr}${offset -40}CPU Usage
+${top name 1}${alignc}${offset 15}${top pid 1}${alignr}${offset -40}${top cpu 1}
+${top name 2}${alignc}${offset 15}${top pid 2}${alignr}${offset -40}${top cpu 2}
+${top name 3}${alignc}${offset 15}${top pid 3}${alignr}${offset -40}${top cpu 3}
+
+Top 3 Memory intensive processes
+${hr 2}
+Name${alignc}${offset 40}PID${alignr}${offset -40}Mem Usage
+${top_mem name 1}${alignc}${offset 15}${top_mem pid 1}${alignr}${offset -40}${top_mem cpu 1}
+${top_mem name 2}${alignc}${offset 15}${top_mem pid 2}${alignr}${offset -40}${top_mem cpu 2}
+${top_mem name 3}${alignc}${offset 15}${top_mem pid 3}${alignr}${offset -40}${top_mem cpu 3}
+
