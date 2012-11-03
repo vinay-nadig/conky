@@ -28,17 +28,21 @@ xftfont Kontrapunkt-Light:pixelsize=20
 
 TEXT
 Battery
+${hr 2}
 Time Remaining${alignr}${offset -40}${battery_time}
 Battery Status${alignr}${offset -40}${battery_short}
 ${battery_bar 25, 400}
+${hr 2}
 
 Processes
+${hr 2}
 Top 3 CPU intensive processes
 ${hr 2}
 Name${alignc}${offset 40}PID${alignr}${offset -40}CPU Usage
 ${top name 1}${alignc}${offset 15}${top pid 1}${alignr}${offset -40}${top cpu 1}
 ${top name 2}${alignc}${offset 15}${top pid 2}${alignr}${offset -40}${top cpu 2}
 ${top name 3}${alignc}${offset 15}${top pid 3}${alignr}${offset -40}${top cpu 3}
+${hr 2}
 
 Top 3 Memory intensive processes
 ${hr 2}

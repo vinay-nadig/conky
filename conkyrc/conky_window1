@@ -9,7 +9,6 @@ draw_shades no				# Otherwise text is drawn twice :/
 format_human_readable yes
 gap_x 10
 gap_y 30
-maximum_width 1366
 no_buffers yes
 own_window yes
 own_window_colour 000000
@@ -27,6 +26,7 @@ xftfont Kontrapunkt-Light:pixelsize=20
 
 TEXT
 RAM
+${hr 2}
 Memory Available :${alignr}${offset 1}${memmax}
 Free Memory :${alignr}${offset 1}${memfree}
 Used Memory :${alignr}${offset 1}${mem}
@@ -34,8 +34,10 @@ Buffered Memory :${alignr}${offset 1}${buffers}
 Cached Memory :${alignr}${offset 1}${cached}
 Easyfree Memory : ${alignr}${offset 1}${memeasyfree}
 ${memgraph 25, 380}
+${hr 2}
 
 Hard Drive Usage
+${hr 2}
 Drives${alignc}${offset 15}Total${alignr}Used
 Root ${alignc}${offset 15}${fs_size /}${alignr}${fs_used /}
 ${fs_bar 20, 380 /}
@@ -47,6 +49,7 @@ Data ${alignc}${offset 15}${fs_size /media/DATA}${alignr}${fs_used /media/DATA}
 ${fs_bar 20, 380 /media/DATA}${endif}
 
 Net Statistics
+${hr 2}
 ${if_up eth1}Wlan
 Downspeed${alignr}${downspeed eth1}
 ${downspeedgraph eth1 25, 380}
