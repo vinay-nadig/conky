@@ -2,7 +2,7 @@ Conky Config files for my desktop.
 
 Installation
 1. Make sure that conky is installed
-2. copy the conkyrc/* files to desired directory
+2. copy the conky folder to home directory
 3. run `conky -c <conkyrc_files>`
 
 TODO

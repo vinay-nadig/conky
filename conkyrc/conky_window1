@@ -25,7 +25,7 @@ xftalpha 1
 xftfont Kontrapunkt-Light:pixelsize=20
 
 TEXT
-RAM
+RAM${image ~/conky/images/ram_drive.png -p 350, 0 -s 30x30}
 ${hr 2}
 Memory Available :${alignr}${offset 1}${memmax}
 Free Memory :${alignr}${offset 1}${memfree}
@@ -36,7 +36,7 @@ Easyfree Memory : ${alignr}${offset 1}${memeasyfree}
 ${memgraph 25, 380}
 ${hr 2}
 
-Hard Drive Usage
+Hard Drive Usage${image ~/conky/images/hard_drive.png -p 350, 230 -s 30x40}
 ${hr 2}
 Drives${alignc}${offset 15}Total${alignr}Used
 Root ${alignc}${offset 15}${fs_size /}${alignr}${fs_used /}
@@ -48,7 +48,7 @@ ${if_mounted /media/DATA}
 Data ${alignc}${offset 15}${fs_size /media/DATA}${alignr}${fs_used /media/DATA}
 ${fs_bar 20, 380 /media/DATA}${endif}
 
-Net Statistics
+Net Statistics${image ~/conky/images/bandwidth.png -p 350, 402 -s 30x30}
 ${hr 2}
 ${if_up eth1}Wlan
 Downspeed${alignr}${downspeed eth1}
