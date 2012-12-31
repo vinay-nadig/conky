@@ -18,26 +18,33 @@ own_window_hints undecorated, below, sticky, skip_taskbar, skip_pager
 own_window_transparent yes
 own_window_type desktop		# Any other value than desktop will make the windows disappear when all windows are minimized.
 short_units yes
-show_graph_range yes
-show_graph_scale yes
+#show_graph_range yes
+#show_graph_scale yes
 update_interval 2.0			# Interval at which conky updates.
 use_xft yes
 xftalpha 1
-xftfont Kontrapunkt-Light:pixelsize=20
+xftfont Kontrapunkt-Light:pixelsize=15
 
 TEXT
-${offset 120}${font Kontrapunkt-Bold:pixelsize=50}MARVIN
-${offset 10}${font Kontrapunkt-Light:pixelsize=20}Kernel Version${alignr}${offset -40}${kernel}
+${offset 160}${font Kontrapunkt-Bold:pixelsize=30}MARVIN
+${offset 10}${font Kontrapunkt-Light:pixelsize=15}Kernel Version${alignr}${offset -40}${kernel}
 ${offset 10}Uptime${alignr}${offset -40}${uptime}
 ${if_up eth1}${offset 10}LAN IP${alignr}${offset -40}${addr eth1}${endif}
-
-${offset 12}${font Kontrapunkt-Bold:pixelsize=50}${time %e %B %G}
-${offset 125}${time %H:%M:%S}
-
+${offset 92}${font Kontrapunkt-Bold:pixelsize=30}${time %e %B %G}
+${offset 150}${time %H:%M:%S}
 
 
 
 
-${font Kontrapunkt-Light:pixelsize=20}CPU Temperature${alignr}${offset -40}${acpitemp}${iconv_start UTF-8 ISO_8859-1}° ${iconv_stop}C
+
+
+
+
+
+
+
+
+
+${font Kontrapunkt-Light:pixelsize=15}CPU Temperature${alignr}${offset -40}${acpitemp}${iconv_start UTF-8 ISO_8859-1}° ${iconv_stop}C
 CPU Load${alignr}${offset -40}${loadavg}
-${cpugraph 25, 460}
+${cpugraph 20, 460}

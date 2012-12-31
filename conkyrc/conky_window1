@@ -16,16 +16,16 @@ own_window_hints undecorated, skip_taskbar, below, sticky, skip_pager
 own_window_transparent yes
 own_window_type desktop		# Any other value than desktop will make the windows disappear if u minimize all the windows
 short_units yes
-show_graph_range yes
-show_graph_scale yes
+show_graph_range no 
+show_graph_scale no
 update_interval 2.0			# Interval at which conky updates.
 use_spacer left
 use_xft yes
 xftalpha 1
-xftfont Kontrapunkt-Light:pixelsize=20
+xftfont Kontrapunkt-Light:pixelsize=15
 
 TEXT
-RAM${image ~/conky/images/ram_drive.png -p 350, 0 -s 30x30}
+RAM
 ${hr 2}
 Memory Available :${alignr}${offset 1}${memmax}
 Free Memory :${alignr}${offset 1}${memfree}
@@ -33,10 +33,10 @@ Used Memory :${alignr}${offset 1}${mem}
 Buffered Memory :${alignr}${offset 1}${buffers}
 Cached Memory :${alignr}${offset 1}${cached}
 Easyfree Memory : ${alignr}${offset 1}${memeasyfree}
-${memgraph 25, 380}
+${color gray0}${memgraph 20, 380}
 ${hr 2}
 
-Hard Drive Usage${image ~/conky/images/hard_drive.png -p 350, 230 -s 30x40}
+Hard Drive Usage
 ${hr 2}
 Drives${alignc}${offset 15}Total${alignr}Used
 Root ${alignc}${offset 15}${fs_size /}${alignr}${fs_used /}
@@ -48,13 +48,13 @@ ${if_mounted /media/DATA}
 Data ${alignc}${offset 15}${fs_size /media/DATA}${alignr}${fs_used /media/DATA}
 ${fs_bar 20, 380 /media/DATA}${endif}
 
-Net Statistics${image ~/conky/images/bandwidth.png -p 350, 402 -s 30x30}
+Net Statistics
 ${hr 2}
 ${if_up eth1}Wlan
 Downspeed${alignr}${downspeed eth1}
-${downspeedgraph eth1 25, 380}
+${color gray0}${downspeedgraph eth1 20, 380}
 Upspeed${alignr}${downspeed eth1}
-${upspeedgraph eth1 25, 380}
+${upspeedgraph eth1 20, 380}
 ${endif}Total Download${alignr}${totaldown eth1}
 Total Upload${alignr}${totalup eth1}
 
